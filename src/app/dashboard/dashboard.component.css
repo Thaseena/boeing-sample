@@ -1,0 +1,167 @@
+.boeing-dash-page-container:before, .boeing-dash-page-container:after, .boeing-dash-page-inner-container:before, .boeing-dash-page-inner-container:after, .boeing-page-row:before, .boeing-page-row:after {
+    content: '';
+    display: table;
+}
+.boeing-dash-page-container:after, .boeing-dash-page-inner-container:after, .boeing-page-row:after {    
+    clear: both;
+}
+.fal {
+    font-family: 'Font Awesome 5 Free';	      
+}
+.fa-plus, .fa-expand-arrows-alt {
+    font-weight: 600;
+}
+.fa-sync-alt {
+    font-weight: 900;    
+}
+.boeing-dash-page-container {
+    padding: 20px 30px;
+    /* background-color: #F2F2F2; */
+}
+.boeing-dash-page-inner-container {
+    padding: 16px 30px 20px;
+    background-color: #fff;
+    -webkit-box-shadow: -1px 0px 8px 0px #ccc;
+    -moz-box-shadow: -1px 0px 8px 0px #ccc;
+    -ms-box-shadow: -1px 0px 8px 0px #ccc;
+    -o-box-shadow: -1px 0px 8px 0px #ccc;    
+    box-shadow: -1px 0px 8px 0px #ccc;    
+}
+.boeing-page-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;           
+}
+.boeing-page-row + .boeing-page-row {
+    margin-top: 1.3rem; 
+}
+.boeing-page-col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;    
+}
+.boeing-page-col-6 + .boeing-page-col-6 {    
+    margin-top: 1.3rem;
+}
+@media only screen and (min-width: 984px) {
+    .boeing-page-col-6 {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }  
+    .boeing-page-col-6 + .boeing-page-col-6 {        
+        margin-top: 0;
+        margin-left: 4%;
+    } 
+}
+.boeing-page-section-container {
+    border-bottom: 2px solid #0096db;
+    background: #fff;   
+    -webkit-box-shadow: 0px 5px 6px -3px #999;
+    -moz-box-shadow: 0px 5px 6px -3px #999;
+    -ms-box-shadow: 0px 5px 6px -3px #999;
+    -o-box-shadow: 0px 5px 6px -3px #999;
+    box-shadow: 0px 5px 6px -3px #999;
+}
+.boeing-page-section-header {
+    padding: 10px 15px;
+    background-color: #F5F5F5; 
+    display: flex; 
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;    
+    justify-content: space-between;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.boeing-page-section-header h5 {
+    font-size: 12px;
+    color: #555;
+    font-weight: bold;
+    line-height: 20px;  
+    margin-bottom: 0;
+    margin-top: 4px;  
+}
+.boeing-page-section-body {
+    padding: 1px 5px;
+    border: 1px solid #E5E5E5; 
+    border-bottom: none;
+    min-height: 262px;
+}
+.boeing-page-section-body label {
+    margin-bottom: 0;
+}
+.boeing-link-btn {
+    padding: 0px 5px;
+    font-size: 12px;
+    line-height: 26px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    background-color: #0096db;
+    text-decoration: none;   
+}
+.boeing-link-btn i {
+    margin-right: 4px; 
+    color: #E1EBE3;
+}
+.boeing-dash-table {
+    width: 100%;
+    margin-bottom: 8px;
+}
+.boeing-dash-table tr:first-child td {
+    padding-top: 0px;
+}
+.boeing-dash-table tr td {
+    padding: 0.0625em 7px;
+    vertical-align: middle;
+    border-bottom: 1px solid #F2F2F2;
+}
+.boeing-page-actions {
+    margin-right: 18px;
+    margin-top: 5px;
+}
+.boeing-page-actions i {
+    font-size: 14px;
+    color: #808080;    
+}
+.boeing-page-actions i + i {
+    margin-left: 11px;
+}
+.boeing-min-ht-238 {
+    min-height: 238px;
+}
+.boeing-pad-bot-0 {
+    padding-bottom: 0;
+}
+.bar-chart-size {
+    min-width: 310px; 
+    max-width: 560px; 
+    height: 238px;
+    margin: 0 auto;             
+}
+.panel-fullscreen {
+    display: block;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.panel-fullscreen .bar-chart-size {
+    max-width: 100%; 
+    height: 100vh;
+}
+.area-expand {
+    display: block;
+    cursor: pointer;
+}
+.area-close {
+    display: none;
+    cursor: pointer;
+}

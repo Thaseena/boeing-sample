@@ -1,0 +1,87 @@
+<div class="container-fluid pl-5 pr-5">
+    <div class="card boeing-card mb-3">
+      <div class="card-header">
+          <h6>
+            <img src='./assets/img/icon/add-new.png' alt="Add New Supplier" />
+            Edit New Supplier
+          </h6>
+      </div>
+      <form class="boeing-form" name="form" (ngSubmit)="f.form.valid && addsupplier(model)" #f="ngForm" novalidate>
+       <div class="card-body">
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="row justify-content-between">
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((supplierName.touched || f.submitted) && supplierName.errors)}">
+                                  <label for="supplierName">Supplier Name<span>*</span></label>
+                                  <input type="text" class="form-control" placeholder="John Smith" id="supplierName" #supplierName="ngModel" name="supplierName" [(ngModel)]="model.supplierName" />
+                              </div>
+                              <!-- <div class="error-msg-box">
+                                  <div *ngIf="(supplierName.touched || f.submitted) && supplierName.errors && supplierName.errors.required">
+                                      Supplier Name is required
+                                  </div>
+                              </div> -->
+                          </div>
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((country.touched || f.submitted) && country.errors)}">
+                                  <label for="country">Country<span>*</span></label>
+                                  <input type="text" class="form-control" placeholder="India" id="country" #country="ngModel" name="country" [(ngModel)]="model.country" />
+                              </div>
+                              <!-- <div class="error-msg-box">
+                                  <div *ngIf="(country.touched || f.submitted) && country.errors && country.errors.required">
+                                      Country is required
+                                  </div>
+                              </div> -->
+                          </div>
+                      </div>
+                      <div class="row justify-content-between">
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((state.touched || f.submitted) && state.errors)}">
+                                  <label for="state">State<span>*</span></label>
+                                  <input type="text" class="form-control" placeholder="Tamilnadu" id="state" #state="ngModel" name="state" [(ngModel)]="model.state" />
+                              </div>
+                              <!-- <div class="error-msg-box">
+                                  <div *ngIf="(state.touched || f.submitted) && state.errors && state.errors.required">
+                                      State is required
+                                  </div>
+                              </div> -->
+                          </div>
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((city.touched || f.submitted) && city.errors)}">
+                                  <label for="city">City<span>*</span></label>
+                                  <input type="text" class="form-control" placeholder="Chennai" id="city" #city="ngModel" name="city" [(ngModel)]="model.city" />
+                              </div>
+                              <!-- <div class="error-msg-box">
+                                  <div *ngIf="(city.touched || f.submitted) && city.errors && city.errors.required">
+                                      City is required
+                                  </div>
+                              </div> -->
+                          </div>
+                      </div>
+                      <div class="row justify-content-between">
+                          <div class="col-md-5">
+                              <div class="form-group">
+                                  <label for="description">Description</label>
+                                  <textarea class="form-control" rows="5" placeholder="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" id="description" #description="ngModel" name="description" [(ngModel)]="model.description"></textarea>
+                              </div>
+                          </div>
+                          <div class="col-md-5">
+                              <div class="form-group">
+                                  <label for="alias">Alias</label>
+                                  <textarea class="form-control" rows="5" placeholder="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" id="alias" #alias="ngModel" name="alias" [(ngModel)]="model.alias"></textarea>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+       </div>
+       <div class="card-footer">
+          <div class="mx-auto w-50 text-center">
+              <button class="btn btn-primary btn-sm">Update</button>
+              <button class="btn btn-sm btn-default" (click)="supplierCancel()">Cancel</button>
+          </div>
+       </div>
+    </form>
+  </div>
+  </div>
+

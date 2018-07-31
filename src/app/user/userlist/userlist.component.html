@@ -1,0 +1,144 @@
+<div class="container-fluid pl-5 pr-5">
+  <div class="card boeing-card mb-3">
+    <div class="card-header">
+        <div class="pull-left">
+            <h6>                    
+                <img src='./assets/img/icon/user.png' alt="User List" />
+                <span>User List</span>
+            </h6>
+        </div>
+        <div class="pull-right">
+            <div class="btn-group mr-2" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary boeing-btn pr-2 dropdown-toggle"
+                        aria-controls="dropdown-basic">
+                        <img src='./assets/img/icon/export.png' alt="Export" />Export <span class="caret"></span>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><a class="dropdown-item" href="#">PDF</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Excel</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Word</a></li>                  
+                </ul>
+              </div>
+          <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/email.png' class="boeing-w-14-px" alt="Email" />Email</button>
+          <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/print.png' alt="Print" />Print</button>
+          <button type="button" class="btn btn-primary boeing-btn" routerLink="/user/adduser"><i class="fa fa-plus"></i>Add New User</button>
+        </div>        
+    </div>    
+    <div class="card-body min-ht-419px">  
+            <div class="row boeing-light-grey-color">    
+                <div class="col-md-6 pl-3 pt-2 pb-3">
+                        <div class="select-number-of-records">
+                            <label for="select-number-of-records">Select</label>:
+                            <select class="select-range" [ngModel]="selectedLimitList" (ngModelChange)="onLimitChange($event)" >
+                                <option [value]="i" *ngFor="let i of showLimitList">{{i}}</option>
+                            </select>
+                        </div>
+                        <!-- <div class="select-number-of-records ml-3">
+                            <label for="select-number-of-records">Select All</label>:
+                            <label class="datatable-checkbox"><input type="checkbox" (click)="onChecked($event)"></label>
+                        </div> -->
+                    </div>          
+                    <div class="col-md-3 offset-md-3 pull-right">
+                            <div class="input-group boeing-form-input-group">
+                                    <input class="form-control border-right-0 border" type="search" value="" />
+                                    <span class="input-group-append">
+                                        <div class="input-group-text border-left-0 border bg-transparent"><i class="fa fa-search"></i></div>
+                                    </span>
+                            </div>
+                            <!-- <input type='text' class="form-control boeing-form-control" />  -->
+                    </div>
+            </div>    
+            <div class="row">
+                    <div class="col-md-12">                            
+                            <ngx-datatable #myTable
+                            style="width: 100%"
+                            class="material boeing-table-custom users"
+                            [rows]="rows"
+                            [columns]="columns"
+                            [columnMode]="'force'"
+                            [headerHeight]="40"
+                            [footerHeight]="40"
+                            [rowHeight]="'auto'"
+                            [limit]="selectedLimitList"                                                          
+                            [selected]="selected"                            
+                            [selectionType]="'checkbox'"
+                            [selectAllRowsOnPage]="false"
+                            [displayCheck]="displayCheck"            
+                            (select)='onSelect($event)'>
+                            <ngx-datatable-column                            
+                              [canAutoResize]="false"
+                              [draggable]="false"
+                              [resizeable]="false"
+                              [headerCheckboxable]="true"
+                              [checkboxable]="true">
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="First Name" [sortable]="true" prop="firstname">
+                                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                        <div class="first-name"><a routerLink="/user/userdetails">{{row.firstname}}</a></div>                        
+                                    </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Last Name" [sortable]="true" prop="lastname">
+                                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                        <div class="last-name">{{row.lastname}}</div>                        
+                                    </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Role" [sortable]="true"></ngx-datatable-column>
+                            <ngx-datatable-column name="Created on" prop="date" [sortable]="true">
+                                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">                        
+                                        <div class="created-on"><i class="fa fa-calendar" aria-hidden="true"></i>{{row.date}}</div>                        
+                                    </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="User Name" prop="username" [sortable]="true">
+                                   <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                        <div class="user-name">{{row.username}}</div>                       
+                                   </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Created by" prop="createdby" [sortable]="true">
+                                   <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                         <div class="last-name">{{row.createdby}}</div>                        
+                                   </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Actions" [sortable]="false" headerClass="is-actions" [cellClass]="getCellClass">
+                                   <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                       <button class="btn" (click)="toggleActivate($event, row)">{{row.actions}}</button>
+                                   </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column [sortable]="false">
+                                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">                        
+                                        <div class="edit-cell"><a [routerLink]="['/user/edituser']"><i class="fa fa-edit"></i></a></div>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-footer>
+                                    <ng-template ngx-datatable-footer-template
+                                    let-rowCount="rowCount"
+                                    let-pageSize="pageSize"
+                                    let-selectedCount="selectedCount"
+                                    let-curPage="curPage"
+                                    let-offset="offset"
+                                    let-isVisible="isVisible">
+                                      <div class="datatable-footer datatable-footer-inner">
+                                            <div class="page-count">
+                                                Showing
+                                                {{selectedLimitList}}
+                                                off 100
+                                            </div>                                            
+                                      </div>  
+                                      <datatable-pager
+                                         [pagerLeftArrowIcon]="'datatable-icon-left'"
+                                         [pagerRightArrowIcon]="'datatable-icon-right'"        
+                                         [page]="curPage"
+                                         [size]="pageSize"
+                                         [count]="rowCount"
+                                         [hidden]="!((rowCount / pageSize) > 1)"
+                                         (change)="myTable.onFooterPage($event)">
+                                      </datatable-pager>                                  
+                                    </ng-template>
+                            </ngx-datatable-footer>                            
+                          </ngx-datatable>
+                    </div>
+            </div>                         
+    </div>    
+</div>
+</div>
+

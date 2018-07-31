@@ -1,0 +1,63 @@
+<div id="#header" class="header">
+  <nav class="navbar navbar-inverse navbar-fixed-top header-image">
+        <div class="container-fluid">
+          <div class="col-md-2 col-sm-2" >
+            <div class="navbar-header">
+              <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button> -->
+              <a class="navbar-brand" href="#"> <img src='./assets/img/logo-inside.png' alt="Logo"/> </a>
+            </div>
+          </div>
+            <div class="col-md-6 col-md-offset-2 set-auto col-sm-6">
+              <form name="search" #q="ngForm" (ngSubmit)="searchData(model)">
+              <div class="input-group global-search-field">
+                  <div class="category-dropdown">
+                    <select #changeSize name="category"
+                    [(ngModel)]="model.searchField" (ngModelChange)="onSelectField($event)"
+                    class="form-control cat-select">
+                      <option value="All">All</option>
+                      <!-- <option value="1">Knowlegde Content</option> -->
+                      <option value="Strengths">Strengths</option>
+                      <!-- <option value="3">Recommendation</option> -->
+                      <option value="Observations">Observations</option>
+                      <option value="Recommendations">Recommendations</option>
+                      <option value="Weakness">Weakness</option>
+                      <option value="Passage">Passage</option>
+                      <!-- <option value="8">Supplier Location</option> -->
+                    </select>
+                  </div>
+                    <!-- <input id="table_filter" type="text" class="form-control global-search-box" aria-label="Text input with segmented button dropdown" > -->
+                    <input id="table_filter" autocomplete="off" name="searchQuery" type="text"[(ngModel)]="model.searchQuery" class="global-search-box" placeholder="Enter your search query here">
+                    <div class="input-group-btn" >
+                      <button id="searchBtn" class="btn btn-secondary btn-search global-src-icon" ><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-2 col-sm-3">
+              <div class="profile-bg">
+                  <div class="col-md-5 profile-img">
+                      <img src='./assets/img/usericon.png' alt="Profile"/>
+                  </div>
+                   <div class="col-md-7 profile-header mt-2">
+                      <p class="mb-0 profile-name">{{profileData.name}}</p>
+                      <p class="sub-title">{{profileData.designation}}</p>
+                  </div>
+              </div>
+            </div>
+        <div class="col-md-0half">
+          <img class="boeing-logout" src='./assets/img/Logout-icon.png' (click)="logout()" alt="Logout"/>
+        </div>
+      </div>
+      </nav>
+  </div>
+  <div id="menu-nav-bar" class="menu-nav-bar">
+      <app-menu></app-menu>
+  </div>
+  <div id="common-breadcrumb" class="common-breadcrumb">
+      <app-breadcrumb></app-breadcrumb>
+  </div>

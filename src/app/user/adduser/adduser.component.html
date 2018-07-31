@@ -1,0 +1,91 @@
+<div class="container-fluid pl-5 pr-5">
+    <div class="card boeing-card mb-3">
+      <div class="card-header">
+          <h6>                    
+            <img src='./assets/img/icon/add-user.png' class="mar-top-neg-5px" alt="Add User" />
+            Add User
+          </h6>
+      </div>
+      <form class="boeing-form" name="form" (ngSubmit)="f.form.valid && adduser(model)" #f="ngForm" novalidate>
+       <div class="card-body min-ht-367px">        
+              <div class="row">
+                  <div class="col-md-6">    
+                      <div class="row justify-content-between">
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((firstName.touched || f.submitted) && firstName.errors)}">
+                                  <label for="firstName">First Name<span>*</span></label>
+                                  <input type="text" class="form-control" id="firstName" #firstName="ngModel" name="firstName" [(ngModel)]="model.firstName" required />
+                              </div>
+                              <div class="error-msg-box">
+                                  <div *ngIf="(firstName.touched || f.submitted) && firstName.errors && firstName.errors.required">
+                                      First Name is required
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((lastName.touched || f.submitted) && lastName.errors)}">
+                                  <label for="lastName">Last Name<span>*</span></label>
+                                  <input type="text" class="form-control" id="lastName" #lastName="ngModel" name="lastName" [(ngModel)]="model.lastName" required />
+                              </div>
+                              <div class="error-msg-box">
+                                  <div *ngIf="(lastName.touched || f.submitted) && lastName.errors && lastName.errors.required">
+                                      Last Name is required
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row justify-content-between">
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((engineeringRole.touched || f.submitted) && engineeringRole.errors)}">
+                                  <label for="engineeringRole">Engineering Role<span>*</span></label>
+                                  <select id="engineeringRole" class="form-control" #engineeringRole="ngModel" name="engineeringRole" [(ngModel)]="model.engineeringRole" required>                                      
+                                      <option>Admin</option>
+                                      <option>User</option>
+                                      <option>Read Only</option>
+                                  </select>                                  
+                              </div>
+                              <div class="error-msg-box">
+                                  <div *ngIf="(engineeringRole.touched || f.submitted) && engineeringRole.errors && engineeringRole.errors.required">
+                                      Engineering Role is required
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-5">
+                                <div class="form-group" [ngClass]="{'has-input-error': ((userName.touched || f.submitted) && userName.errors)}">
+                                    <label for="userName">User Name<span>*</span></label>
+                                    <input type="text" class="form-control" id="userName" #userName="ngModel" name="userName" [(ngModel)]="model.userName" required />
+                                </div>
+                                <div class="error-msg-box">
+                                    <div *ngIf="(userName.touched || f.submitted) && userName.errors && userName.errors.required">
+                                        User Name is required
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="row justify-content-between">                          
+                          <div class="col-md-5">
+                              <div class="form-group" [ngClass]="{'has-input-error': ((password.touched || f.submitted) && password.errors)}">
+                                  <label for="password">Password<span>*</span></label>
+                                  <input type="password" class="form-control" id="password" #password="ngModel" name="password" [(ngModel)]="model.password" required />
+                              </div>
+                              <div class="error-msg-box">
+                                  <div *ngIf="(password.touched || f.submitted) && password.errors && password.errors.required">
+                                      Password is required
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>               
+       </div>
+       <div class="card-footer">
+          <div class="mx-auto w-50 text-center">
+              <button class="btn btn-primary btn-sm">Add</button>
+              <button class="btn btn-sm btn-default" (click)="userCancel()">Cancel</button>
+          </div>       
+       </div>
+    </form> 
+  </div>
+  </div>
+  
+  

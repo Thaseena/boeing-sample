@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="boeing-dash-page-container">
+        <div class="boeing-dash-page-inner-container mt-4">
+            <div class="boeing-page-row">           
+              <div class="boeing-page-col-6">
+                   <div class="boeing-page-section-container">
+                           <div class="boeing-page-section-header">
+                              <h5>Top 5 Suppliers</h5>
+                              <a href="#" class="boeing-link-btn" routerLink="/supplier/addsupplier">
+                                  <i class="fa fa-plus"></i>
+                                  Add New Supplier
+                              </a>
+                           </div>
+                           <div class="boeing-page-section-body">
+                               <table class="boeing-dash-table" cellpadding="0" cellspacing="0">
+                                   <tbody>
+                                       <tr *ngFor="let supplier of top_suppliers">
+                                           <td style="width:25%">
+                                               <a href="#" class="boeing-link-title">{{supplier.SupplierName}}</a>
+                                               <div>
+                                                   <label class="boeing-qs-data">Location:</label>
+                                                   <label class="boeing-ans-data">{{supplier.SupplierState}}</label>
+                                               </div>
+                                           </td>
+                                           <td style="width:25%">
+                                                 <label class="boeing-qs-lg-data">Assessments</label>
+                                                 <label class="boeing-ans-data">{{supplier.AssessmentContent.RecCount}}</label>
+                                           </td>
+                                           <td style="width:25%">
+                                                 <label class="boeing-qs-lg-data">Score</label>
+                                                 <label class="boeing-ans-data">{{supplier.AssessmentContent.Rank}}</label>
+                                           </td>
+                                           <td style="width:25%">
+                                                 <label class="boeing-qs-lg-data">Capability</label>
+                                                 <label class="boeing-ans-data">{{supplier.AssessmentContent.Capabilities.length}}</label>
+                                           </td>
+                                       </tr>
+                                   </tbody>
+                               </table>  
+                           </div>
+                        </div>
+              </div>
+              <div class="boeing-page-col-6" id="container-1">
+                   <div class="boeing-page-section-container">
+                      <div class="boeing-page-section-header">
+                         <h5>Key Component</h5>      
+                         <div class="boeing-page-actions">
+                                <i class="fal fa-expand-arrows-alt" [ngClass]="expand? 'area-expand':'area-close'"  (click)="expandWidget($event, '#container-1')"></i>
+                                <i class="fa fa-times" [ngClass]="close? 'area-expand':'area-close'"  (click)="closeWidget($event, '#container-1')"></i>
+                         </div>                   
+                      </div>
+                      <div class="boeing-page-section-body text-center boeing-min-ht-267px">
+                        <div id="key-word-cloud"></div>
+                      </div>
+                   </div>
+               </div>
+            </div>
+            <div class="boeing-page-row">           
+                   <div class="boeing-page-col-6" id="container-2">
+                           <div class="boeing-page-section-container">
+                                   <div class="boeing-page-section-header">
+                                      <h5>Supplier Statistics</h5> 
+                                      <div class="boeing-page-actions">
+                                        <i class="fal fa-expand-arrows-alt" [ngClass]="expand? 'area-expand':'area-close'"  (click)="expandWidget($event, '#container-2')"></i>
+                                        <i class="fa fa-times" [ngClass]="close? 'area-expand':'area-close'"  (click)="closeWidget($event, '#container-2')"></i>
+                                      </div>                    
+                                   </div>
+                                   <div class="boeing-page-section-body boeing-min-ht-238 boeing-pad-bot-0">
+                                      <!-- <button (click)="add()">Add Point!</button> -->
+                                      <div class="bar-chart-size" [chart]="supplier"></div>
+                                   </div>
+                                </div>
+                   </div>
+                   <div class="boeing-page-col-6" id="container-3">
+                           <div class="boeing-page-section-container">
+                                   <div class="boeing-page-section-header">
+                                      <h5>Assessments Statistics</h5> 
+                                      <div class="boeing-page-actions">
+                                        <!-- <i class="fal fa-sync-alt"></i> -->
+                                        <i class="fal fa-expand-arrows-alt" [ngClass]="expand? 'area-expand':'area-close'"  (click)="expandWidget($event, '#container-3')"></i>
+                                        <i class="fa fa-times" [ngClass]="close? 'area-expand':'area-close'"  (click)="closeWidget($event, '#container-3')"></i>
+                                      </div>                    
+                                   </div>
+                                   <div class="boeing-page-section-body boeing-min-ht-238 boeing-pad-bot-0">
+                                      <div class="bar-chart-size" [chart]="assessment"></div>
+                                   </div>
+                                </div>
+                   </div>
+            </div>         
+        </div>
+    </div>
+</div>
+
+<!-- <i class="fa fa-car fa-lg"></i>
+<i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true"> </i> -->

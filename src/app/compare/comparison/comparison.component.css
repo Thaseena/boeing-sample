@@ -1,0 +1,44 @@
+.comp-title h6 {
+    font-weight: bold;
+}
+.compare-widget {
+    padding: 10px;
+    color: #fff;
+}
+.compare-widget-bg-maroon {
+    background: #9e1a33;
+}
+.compare-widget-bg-green {
+    background: #007065;
+}
+.compare-widget-bg-lgreen {
+    background: #78b800;
+}
+.compare-widget-bg-lgray {
+    background: #5e6971;
+}
+.compare-widget-bg-dark-gray {
+    background: #374959;
+}
+.compare-widget img{
+    width:40px;
+    height:40px;
+    position:absolute;
+    left:10px;
+}
+.compare-widget strong {
+   display:block;
+   position:absolute;
+   left:60px;
+   font-size:0.9em;
+}
+.compare-widget p > span {
+   position:relative;
+   left:50px;
+   top:12px;
+   font-size:0.7em
+}
+.alert {
+    padding:0;
+    margin:0;
+}

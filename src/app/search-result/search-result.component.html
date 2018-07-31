@@ -1,0 +1,230 @@
+<div class="container-fluid pl-5 pr-5">
+    <div class="card search-result-layout mb-3">
+      <div class="card-header">
+          <div class="pull-left">
+              <h6>                    
+                  <i class="boeing-search-result-icon"><img src='./assets/img/icon/search-result.png' alt="Search"/></i>
+                  <span>Search Result</span>
+              </h6>
+          </div>
+          <div class="pull-right">
+              <div class="btn-group mr-3" dropdown>
+                  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary boeing-btn dropdown-toggle"
+                          aria-controls="dropdown-basic">
+                          <i class="boeing-data-icon"><img src='./assets/img/icon/export.png' alt="Export"/></i>Export <span class="caret"></span>
+                  </button>
+                  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                      role="menu" aria-labelledby="button-basic">
+                    <li role="menuitem"><a class="dropdown-item" href="#">PDF</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Excel</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Word</a></li>
+                    <!-- <li class="divider dropdown-divider"></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                    </li> -->
+                  </ul>
+                </div>
+            <button type="button" class="btn btn-primary boeing-btn mr-3"><i class="boeing-data-icon"><img src='./assets/img/icon/email.png' alt="Email"/></i>Email</button>
+            <button type="button" class="btn btn-primary boeing-btn"><i class="boeing-data-icon"><img src='./assets/img/icon/print.png' alt="Print"/></i>Print</button>
+          </div>
+      </div>
+      <div class="card-body">
+          <div class="row boeing-light-grey-color">
+              <div class="col-md-12  mt-3 mb-2">
+                <div class="search-for">
+                  <label for="search-for">You Searched For</label><span class="pl-4 pr-4">  :</span>
+                  <span>{{searchQuery?.searchQuery?searchQuery.searchQuery:'All'}} in <strong>{{searchQuery?.searchField?searchQuery.searchField:"All Categories"}}</strong></span>
+                </div>
+                <div class="search-for">
+                  <label for="search-for">Total Result Found</label><span class="pl-4 pr-4">:</span>
+                  <span><strong>100</strong></span>
+                </div>
+              </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="row mt-3 mb-3 boeing-light-grey-color">
+              <div class="col-md-4 pl-3">
+                <div class="select-number-of-records">
+                  <label for="select-number-of-records">Select</label>:
+                  <select class="select-range" [ngModel]="selectedLimitList" (ngModelChange)="onLimitChange($event)" >
+                    <option [value]="i" *ngFor="let i of showLimitList">{{i}}</option>
+                  </select>
+                </div>
+                <!-- <div class="select-number-of-records ml-3">
+                    <label for="select-number-of-records">Select All</label>:
+                    <label class="datatable-checkbox"><input type="checkbox" (change)="onChecked($event)"></label>
+                  </div> -->
+              </div>
+              <div class="col-md-8">
+                <div class="filter-sorting pull-right">
+                  <i class="fa fa-filter boeing-light-grey-color filter-pointer" (click)="toggleFilterOption($event)" aria-hidden="true"></i>
+                  <label for="filtering" class="pl-1 filter-pointer" (click)="toggleFilterOption($event)">Filter</label><span class="pl-3 pr-3">|</span>
+                  <label for="sorting">Sort by</label>:
+                  <select class="select-to-sort">
+                    <option value="supplier name">Supplier Name</option>
+                    <option value="Location">Location</option>
+                    <option value="State">State</option>
+                    <option value="Country">Country</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row boeing-filter-container" *ngIf="showFilterOption">
+              <div class="col-md-12">
+                <form #form="ngForm" name="form">
+                  <div class="filter-layout">
+                      <div class="col-md-2 col-sm-4">
+                      <p class="pr-2 mb-0">Year</p>
+                      <i class="fa fa-caret-down"></i>
+                      <select class="select-year mt-1" name="year" [ngModel]="selectedYearList" (ngModelChange)="onYearChange($event)" >
+                        <option [value]="i" *ngFor="let i of showYearList">{{i}}</option>
+                      </select>
+                      </div>
+                      <div class="col-md-2 col-sm-4">
+                      <p class="pr-2 mb-0">Supplier Name</p>
+                      <i class="fa fa-caret-down"></i>
+                      <div class="filter-supplier">
+                          <select class="select-supplier mt-1" name="suppliers" [ngModel]="selectedSupplier" (ngModelChange)="onSupplierChange($event)" >
+                            <option value="" >Select Supplier</option>  
+                            <option [value]="i" *ngFor="let i of supplierList">{{i}}</option>
+                            </select>
+                      </div>
+                      <!-- <select class="select-range" [ngModel]="selectedLimitList" (ngModelChange)="onLimitChange($event)" >
+                        <option [value]="i" *ngFor="let i of showLimitList">{{i}}</option>
+                      </select> -->
+                      </div>
+                      <div class="col-md-2 col-sm-4">
+                        <p class="pr-2 mb-0">Assessment Type</p>
+                        <i class="fa fa-caret-down"></i>
+                        <select class="filter-assessment-type mt-1" name="assessment-type" [ngModel]="selectedAssessment" (ngModelChange)="onAssessmentChange($event)" >
+                            <option value="" >Select Assessment Type</option>
+                          <option [value]="i" *ngFor="let i of assessmentTypeList">{{i}}</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2 col-sm-4 ml-5">
+                        <p class="pr-2 mb-0">Per Page</p>
+                        <i class="fa fa-caret-down"></i>
+                        <select class="select-page mt-1" name="per-page" [ngModel]="selectedLimitList" (ngModelChange)="onLimitChange($event)" >
+                            <option [value]="i" *ngFor="let i of showLimitList">{{i}}</option>
+                          </select>
+                      </div>
+                      <div class="col-md-3  col-sm-4">
+                          <button type="button" class="btn btn-primary boeing-btn pull-right mt-2"><i class="boeing-data-icon"><img src='./assets/img/icon/show.png' alt="Show"/></i>Show</button>
+                      </div>
+                    </div>
+                 </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <ngx-datatable #myTable
+                  class="material boeing-search-custom"
+                  [headerHeight]="40"
+                  [rowHeight]="rowHeight"
+                  [footerHeight]="40"
+                  [count]="true"
+                  [limit]="selectedLimitList"
+                  [columnMode]="'force'"
+                  [selectionType]="'checkbox'"
+                  [selectAllRowsOnPage]="false"
+                  [selected]="selected"
+                  [rowClass]=""
+                  [rows]="rows"
+                  (select)='onSelect($event)'
+                  >
+                    <ngx-datatable-column
+                        [width]="130"
+                        [sortable]="false"
+                        [canAutoResize]="false"
+                        [draggable]="false"
+                        [resizeable]="false"
+                        [headerCheckboxable]="true"
+                        [checkboxable]="true">
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                          <div class="assessment-type"><a [routerLink]="['/home']">{{row.assessment}}</a></div>
+                          <div class="assessment-date"><i class="fa fa-calendar" aria-hidden="true"></i>  {{row.date}}</div>
+                          <div class="assessment-details" id="accordion" role="tablist" aria-multiselectable="true">
+                              <div class="assessment-strength mt-2 mb-2">
+                                <div class="assessment-header" role="tab"><strong class="boeing-light-grey-color">Strengths</strong>
+                                  <a class="collapsed" (click)="collapsed($event)" data-toggle="collapse" attr.data-parent="#accordion" attr.href="{{'#container-'+rowIndex}}" 
+                                  aria-expanded="false" attr.aria-controls="{{'container-'+rowIndex}}"></a>
+                                </div>
+                                   <div class="assessment-body collapse" attr.id="{{'container-'+rowIndex}}"
+                                   role="tabpanel">
+                                      <div class="panel-body">
+                                        <ul>
+                                          <li *ngFor="let strength of row.strengths">{{strength}} </li>
+                                        </ul>
+                                       </div>
+                                   </div>
+                              </div>
+                              <!-- <div class="assessment-recommendation mb-2">
+                                <div class="assessment-header" role="tab"><strong class="boeing-light-grey-color">Recommendations</strong>
+                                  <a class="collapsed" data-toggle="collapse" attr.data-parent="#accordion" attr.href="{{'#containerOne-'+rowIndex}}"
+                                  aria-expanded="false" attr.aria-controls="{{'containerOne-'+rowIndex}}"></a> 
+                                </div>
+                                <div class="assessment-body panel-collapse collapse" attr.id="{{'containerOne-'+rowIndex}}"
+                                role="tabpanel">
+                                  <div class="panel-body">
+                                      <ul>
+                                          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                                          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                                        </ul>
+                                  </div>
+                                </div>
+                              </div> -->
+                          </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <div class="location-type"><strong>Location</strong></div>
+                        <div class="location-map"><i class="fa fa-map-marker" aria-hidden="true"></i>  {{row.locations}}</div>
+                        <div class="location-description">Lorem ipsum</div>
+                      </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <div class="score-type"><strong>Score</strong></div>
+                        <div class="location-description">{{row.score}}</div>
+                      </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <div class="score-type"><strong>Capability</strong></div>
+                        <div class="location-description">{{row.capability}}</div>
+                      </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-footer>
+                        <ng-template ngx-datatable-footer-template
+                        let-rowCount="rowCount"
+                        let-pageSize="pageSize"
+                        let-selectedCount="selectedCount"
+                        let-curPage="curPage"
+                        let-offset="offset"
+                        let-isVisible="isVisible">
+                          <div class="datatable-footer datatable-footer-inner">
+                                <div class="page-count">
+                                    Showing
+                                    {{selectedLimitList}}
+                                    off 100
+                                </div>                                            
+                          </div>  
+                          <datatable-pager
+                             [pagerLeftArrowIcon]="'datatable-icon-left'"
+                             [pagerRightArrowIcon]="'datatable-icon-right'"        
+                             [page]="curPage"
+                             [size]="pageSize"
+                             [count]="rowCount"
+                             [hidden]="!((rowCount / pageSize) > 1)"
+                             (change)="myTable.onFooterPage($event)">
+                          </datatable-pager>                                  
+                        </ng-template>
+                </ngx-datatable-footer> 
+                  </ngx-datatable>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>

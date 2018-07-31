@@ -1,0 +1,146 @@
+<div class="container-fluid pl-5 pr-5">
+  <div class="card boeing-card mb-3">
+    <div class="card-header">
+        <div class="pull-left">
+            <h6>                    
+                <img src='./assets/img/icon/list-icon.png' alt="Supplier Assessment Details" />
+                <span>Supplier Assessment Details</span>
+            </h6>
+        </div>
+        <div class="pull-right">
+            <div class="btn-group mr-2" dropdown> 
+                <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/delete-trash.png' class="" alt="Delete" />Delete</button>                
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary boeing-btn pr-2 dropdown-toggle"
+                        aria-controls="dropdown-basic">
+                        <img src='./assets/img/icon/export.png' alt="Export" />Export <span class="caret"></span>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><a class="dropdown-item" href="#">PDF</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Excel</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Word</a></li>                  
+                </ul>
+              </div>
+          <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/email.png' class="boeing-w-14-px" alt="Email" />Email</button>
+          <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/print.png' alt="Print" />Print</button>
+          <button type="button" class="btn btn-primary boeing-btn" routerLink="/assessment"><img src='./assets/img/icon/arrow-left.png' class="boeing-w-auto" alt="Back" />Back</button>                  
+        </div>        
+    </div>    
+    <div class="card-body">  
+        <div class="row mb-3">
+            <div class="col-md-2"> 
+                <div class="boeing-qs-lg-data boeing-dark-grey--font">Supplier Name</div> 
+                <div class="boeing-ans-data boeing-dark-grey--font">John Smith</div>                  
+            </div>
+            <div class="col-md-2">
+                <div class="boeing-qs-lg-data boeing-dark-grey--font">Location</div> 
+                <div class="boeing-ans-data boeing-dark-grey--font"><i class="fa fa-map-marker"></i>Arizona</div>                         
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-11">
+                <div class="boeing-qs-lg-data boeing-dark-grey--font">Description</div> 
+                <p class="boeing-ans-data boeing-dark-grey--font">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ex id erat aliquet ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ac metus arcu. Vestibulum efficitur blandit enim sit amet interdum. Aliquam tempus eget velit ac auctor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ut varius tortor.
+                </p>  
+            </div>
+        </div> 
+        <div class="row boeing-grey-bor-bottom mb-2">
+            <div class="col-md-11">
+                <div class="boeing-qs-lg-data boeing-dark-grey--font">Alias</div> 
+                <p class="boeing-ans-data boeing-dark-grey--font">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut ex id erat aliquet ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ac metus arcu. Vestibulum efficitur blandit enim sit amet interdum. Aliquam tempus eget velit ac auctor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ut varius tortor.
+                </p>  
+            </div>
+        </div> 
+        <div class="boeing-section-grp">
+            <h6>Assessments</h6>
+            <div class="row boeing-light-grey-color">    
+                    <div class="col-md-6 pt-2 pb-2">
+                            <div class="select-number-of-records">
+                                <label for="select-number-of-records">Select</label>:
+                                <select class="select-range" [ngModel]="selectedLimitList" (ngModelChange)="onLimitChange($event)" >
+                                    <option [value]="i" *ngFor="let i of showLimitList">{{i}}</option>
+                                </select>
+                            </div>                          
+                    </div>                               
+              </div> 
+            <div class="row">
+                <div class="col-md-12">                            
+                        <ngx-datatable #myTable                        
+                        class="material boeing-table-custom assessments"
+                        [rows]="rows"
+                        [columns]="columns"
+                        [columnMode]="'force'"
+                        [headerHeight]="40"
+                        [footerHeight]="40"
+                        [rowHeight]="'auto'"
+                        [limit]="selectedLimitList"                                                           
+                        [selected]="selected"                            
+                        [selectionType]="'checkbox'"
+                        [selectAllRowsOnPage]="false"
+                        [displayCheck]="displayCheck"            
+                        (select)='onSelect($event)'>
+                        <ngx-datatable-column                            
+                          [canAutoResize]="false"
+                          [draggable]="false"
+                          [resizeable]="false"
+                          [headerCheckboxable]="true"
+                          [checkboxable]="true">
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Assessment Name" [sortable]="false">
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                    <div class="assessment-name"><a class="boeing-link-title" routerLink="/assessment/assessmentdetails">{{row.assessmentname}}</a></div>                        
+                                </ng-template>
+                        </ngx-datatable-column>                                                    
+                        <ngx-datatable-column name="Assessment Mode" [sortable]="false">
+                                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">                        
+                                    <div class="assessment-mode">{{row.assessmentmode}}</div>                        
+                                </ng-template>
+                        </ngx-datatable-column>                              
+                        <ngx-datatable-column name="Assessment Year" [sortable]="false">
+                               <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                     <div class="assessment-year">{{row.assessmentyear}}</div>                        
+                               </ng-template>
+                        </ngx-datatable-column>                                         
+                        <ngx-datatable-column name="Assessment Document" [sortable]="false">
+                            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                                  <div class="assessment-document">{{row.assessmentdocument}}</div>                        
+                            </ng-template>
+                        </ngx-datatable-column>           
+                        <ngx-datatable-footer>
+                                <ng-template ngx-datatable-footer-template
+                                let-rowCount="rowCount"
+                                let-pageSize="pageSize"
+                                let-selectedCount="selectedCount"
+                                let-curPage="curPage"
+                                let-offset="offset"
+                                let-isVisible="isVisible">
+                                  <div class="datatable-footer datatable-footer-inner">
+                                          <div class="page-count">
+                                                  Showing
+                                                  {{selectedLimitList}}
+                                                  off 100
+                                          </div>                                             
+                                  </div>  
+                                  <datatable-pager
+                                     [pagerLeftArrowIcon]="'datatable-icon-left'"
+                                     [pagerRightArrowIcon]="'datatable-icon-right'"        
+                                     [page]="curPage"
+                                     [size]="pageSize"
+                                     [count]="rowCount"
+                                     [hidden]="!((rowCount / pageSize) > 1)"
+                                     (change)="myTable.onFooterPage($event)">
+                                  </datatable-pager>                                  
+                                </ng-template>
+                        </ngx-datatable-footer>                            
+                      </ngx-datatable>
+                </div>
+        </div> 
+        </div>
+    </div>    
+</div>
+</div>
+
+
+

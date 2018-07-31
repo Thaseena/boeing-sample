@@ -1,0 +1,65 @@
+<!-- <div class="boeing-login-layout">
+  <div class="boeing-login-form-container">
+    <div class="boeing-logo-img">
+        <img src="./assets/img/Logo-login.png" alt="" />
+    </div>
+    <form name="form" (ngSubmit)="f.form.valid && login(model)" #f="ngForm" novalidate>
+              <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                  <label for="username" class="boeing-login-form-label">Username</label>
+                  <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                  <i class="fa fa-user"></i> 
+                  <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+              </div>
+              <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                  <i class="fa fa-lock"></i>   
+                  <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+              </div>
+              <div class="form-group">
+                  <button [disabled]="loading" class="btn btn-primary">Login</button>
+              </div>
+          </form>
+  </div>   
+</div> -->
+<div class="boeing-login-layout">
+  <div class="boeing-login-form-container">
+    <div class="boeing-logo-img">
+        <img src="./assets/img/Logo-login.png" alt="" />
+    </div>
+    <form class="signInForm bpform" name="form" (ngSubmit)="f.form.valid && login(model)" #f="ngForm" novalidate>
+      <div class="boeing-login-form-group" [ngClass]="{'has-input-error': ((username.touched || f.submitted) && username.errors)}">
+        <label class="boeing-login-form-label">User ID</label>
+        <div class="boeing-login-input-group">
+          <input type="text" #username="ngModel" autocomplete="off" pattern="^(\w+ ?)(?=.).*$" class="boeing-login-input-control" name="username" [(ngModel)]="model.username" required maxlength="20">
+          <i class="fa fa-user"></i>   
+        </div>
+        <div class="error-msg-box">
+          <div *ngIf="(username.touched || f.submitted) && username.errors && username.errors.required">
+           User Id is required
+          </div>
+        </div>
+      </div>
+      <div class="boeing-login-form-group" [ngClass]="{'has-input-error': ((password.touched || f.submitted) && password.errors)}">
+        <label class="boeing-login-form-label">Password</label>
+        <div class="boeing-login-input-group">  
+            <input type="password" class="boeing-login-input-control" required [(ngModel)]="model.password" name="password" reverse="true" #password="ngModel">
+            <i class="fa fa-lock"></i>
+        </div>
+        <div class="error-msg-box">
+          <div *ngIf="(password.touched || f.submitted) && password.errors && password.errors.required">
+            Password is required
+          </div>
+        </div>
+      </div>
+      <div class="boeing-login-form-group">
+        <input class="boeing-login-form-checkbox" id="remember-me" type="checkbox" name="checked" [(ngModel)]="model.checked" />
+        <label for="remember-me">Remember Me?</label>
+      </div>
+      <div class="boeing-login-form-group">
+        <button class="boeing-login-link">Login</button>
+      </div>
+      <i *ngIf="loading" class="fa fa-spinner fa-spin fa-lg"></i>
+  </form>
+  </div>   
+</div>

@@ -1,0 +1,98 @@
+[
+    {
+        "rolename": "Admin",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },
+    {
+        "rolename": "User",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Activate"
+    },    
+    {
+        "rolename": "Read Only",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },
+    {
+        "rolename": "Admin",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },
+    {
+        "rolename": "User",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Activate"
+    },    
+    {
+        "rolename": "Read Only",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },
+    {
+        "rolename": "Admin",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },
+    {
+        "rolename": "User",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },    
+    {
+        "rolename": "Read Only",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },
+    {
+        "rolename": "Admin",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },
+    {
+        "rolename": "User",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    },    
+    {
+        "rolename": "Read Only",
+        "description": "Lorem Ipsum",        
+        "date": "12/03/2018",        
+        "createdby": "Sara John",
+        "checked": "true",
+        "actions": "Deactivate"
+    }
+]

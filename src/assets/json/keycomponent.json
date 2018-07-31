@@ -1,0 +1,27 @@
+{
+    "words": [
+        {"text":"Effective program management", "url":"", "color": "#FF95A1", "frequency": 10, "rotate": 0},
+        {"text":"early testing", "url":"", "color": "#FF95A1", "frequency": 10, "rotate": 0},
+        {"text":"Installation", "url":"", "color": "#FF7A11", "frequency": 10, "rotate": 0},
+        {"text":"Methods Compatibility", "url":"", "color": "#7C7E7D", "frequency": 10, "rotate": 0},
+        {"text":"Product safety", "url":"", "color": "#B1E0EA", "frequency": 10, "rotate": 65},
+        {"text":"nimble design", "url":"", "color": "#07BBCA", "frequency": 10, "rotate": 65},
+        {"text":"good knowledge", "url":"", "color": "#AEC6EA", "frequency": 25, "rotate": 60},
+        {"text":"Data protection", "url":"", "color": "#F8B1D1", "frequency": 10, "rotate": 58},
+        {"text":"EASA Knowledge", "url":"", "color": "#FFBB78", "frequency": 25, "rotate": 60},
+        {"text":"Technical Design capability", "url":"", "color": "#E47FC5", "frequency": 10, "rotate": 60},
+        {"text":"derivative designs", "url":"", "color": "#C19BA6", "frequency": 10, "rotate": 0},
+        {"text":"tooling", "url":"", "color": "#1E77B3", "frequency": 45, "rotate": 60},
+        {"text":"design", "url":"", "color": "#FFBB78", "frequency": 10, "rotate": 60},
+        {"text":"Verv", "url":"", "color": "#AEC6EA", "frequency": 10, "rotate": 0},
+        {"text":"electrical design", "url":"", "color": "#FF7A11", "frequency": 25, "rotate": 60},
+        {"text":"centric", "url":"", "color": "#239D26", "frequency": 10, "rotate": 60},
+        {"text":"fuselage structural testing", "url":"", "color": "#9CE29C", "frequency": 10, "rotate": 60},
+        {"text":"Robust methods", "url":"", "color": "#1E77B3", "frequency": 10, "rotate": 60},
+        {"text":"Integration", "url":"", "color": "#C4C5C9", "frequency": 10, "rotate": 60},
+        {"text":"Test facility capacity", "url":"", "color": "#C0B4D8", "frequency": 10, "rotate": 0},
+        {"text":"Extensive Grane capacity", "url":"", "color": "#8961C1", "frequency": 10, "rotate": 0},
+        {"text":"recurring SOW activities", "url":"", "color": "#7F434B", "frequency": 10, "rotate": 0},
+        {"text":"wing tip test module", "url":"", "color": "#D8DE9E", "frequency": 10, "rotate": 0},
+        {"text":"molding", "url":"", "color": "#239D26", "frequency": 25, "rotate": 0}]
+}

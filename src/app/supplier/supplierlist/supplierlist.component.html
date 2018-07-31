@@ -1,0 +1,139 @@
+<div class="container-fluid pl-5 pr-5">
+    <div class="card boeing-card mb-3">
+      <div class="card-header">
+          <div class="pull-left">
+              <h6>                    
+                  <img src='./assets/img/icon/list-icon.png' alt="Supplier List" />
+                  <span>Supplier List</span>
+              </h6>
+          </div>
+          <div class="pull-right">
+              <div class="btn-group mr-2" dropdown>
+                  <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/delete-trash.png' class="" alt="Delete" />Delete</button>
+                  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary boeing-btn pr-2 dropdown-toggle"
+                          aria-controls="dropdown-basic">
+                          <img src='./assets/img/icon/export.png' alt="Export" />Export <span class="caret"></span>
+                  </button>
+                  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                      role="menu" aria-labelledby="button-basic">
+                    <li role="menuitem"><a class="dropdown-item" href="#">PDF</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Excel</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Word</a></li>                  
+                  </ul>
+                </div>
+            <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/email.png' class="boeing-w-14-px" alt="Email" />Email</button>
+            <button type="button" class="btn btn-primary boeing-btn mr-2"><img src='./assets/img/icon/print.png' alt="Print" />Print</button>
+            <button type="button" class="btn btn-primary boeing-btn" routerLink="/supplier/addsupplier"><i class="fa fa-plus"></i>Add New Supplier</button>
+          </div>        
+      </div>    
+      <div class="card-body">  
+          <div class="row mt-2 mb-3 boeing-light-grey-color">
+              <div class="col-md-4 pl-3">
+                <div class="select-number-of-records">
+                  <label for="select-number-of-records">Select</label>:
+                  <select class="select-range" [ngModel]="selectedLimitList" (ngModelChange)="onLimitChange($event)" >
+                    <option [value]="i" *ngFor="let i of showLimitList">{{i}}</option>
+                  </select>
+                </div>               
+              </div>
+              <div class="col-md-8">
+                <div class="filter-sorting pull-right">                  
+                  <label for="sorting">Sort by</label>:
+                  <select class="select-to-sort">
+                    <option value="supplier name">Supplier Name</option>
+                    <option value="Location">Location</option>
+                    <option value="State">State</option>
+                    <option value="Country">Country</option>
+                  </select>
+                </div>
+              </div>
+          </div>                                         
+          <div class="row">
+              <div class="col-md-12">
+                <ngx-datatable #myTable
+                  class="material boeing-search-custom boeing-table-custom-cell-align"
+                  [headerHeight]="40"
+                  [rowHeight]="rowHeight"
+                  [footerHeight]="40"
+                  [count]="true"
+                  [limit]="selectedLimitList"
+                  [columnMode]="'force'"
+                  [selectionType]="'checkbox'"
+                  [selectAllRowsOnPage]="false"
+                  [selected]="selected"
+                  [rowClass]=""
+                  [rows]="rows"
+                  (select)='onSelect($event)'>
+                    <ngx-datatable-column
+                        [width]="130"
+                        [sortable]="false"
+                        [canAutoResize]="false"
+                        [draggable]="false"
+                        [resizeable]="false"
+                        [headerCheckboxable]="true"
+                        [checkboxable]="true">
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                          <div class="assessment-type"><a class="boeing-link-title" [routerLink]="['/supplier/supplierdetails']">{{row.SupplierName}}</a></div>
+                          <div class="assessment-date boeing-ans-data"><i class="fa fa-calendar" aria-hidden="true"></i>{{row.date}}</div>
+                          <div class="location-map boeing-ans-data"><i class="fa fa-map-marker" aria-hidden="true"></i>{{row.SupplierState}}</div>                         
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <div class="location-type boeing-qs-lg-data">Assessments</div>                        
+                        <div class="location-description boeing-ans-data">{{row.AssessmentContent.RecCount}}</div>
+                      </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <div class="score-type boeing-qs-lg-data">Score</div>
+                        <div class="location-description boeing-ans-data">{{row.AssessmentContent.Rank}}</div>
+                      </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="">
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <div class="score-type boeing-qs-lg-data">Capability</div>
+                        <div class="location-description boeing-ans-data">{{row.AssessmentContent.Capabilities.length}}</div>
+                      </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column>
+                        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">                        
+                                <div class="edit-cell"><a [routerLink]="['/supplier/editsupplier']"><i class="fa fa-edit"></i></a></div>       
+                       </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-footer>
+                        <ng-template ngx-datatable-footer-template
+                        let-rowCount="rowCount"
+                        let-pageSize="pageSize"
+                        let-selectedCount="selectedCount"
+                        let-curPage="curPage"
+                        let-offset="offset"
+                        let-isVisible="isVisible">
+                          <div class="datatable-footer datatable-footer-inner">
+                                <div class="page-count">
+                                    Showing
+                                    {{selectedLimitList}}
+                                    off 100
+                                </div>                                            
+                          </div>  
+                          <datatable-pager
+                             [pagerLeftArrowIcon]="'datatable-icon-left'"
+                             [pagerRightArrowIcon]="'datatable-icon-right'"        
+                             [page]="curPage"
+                             [size]="pageSize"
+                             [count]="rowCount"
+                             [hidden]="!((rowCount / pageSize) > 1)"
+                             (change)="myTable.onFooterPage($event)">
+                          </datatable-pager>                                  
+                        </ng-template>
+                </ngx-datatable-footer> 
+                  </ngx-datatable>
+              </div>
+            </div>
+      </div>    
+  </div>
+  </div>
+  
+  

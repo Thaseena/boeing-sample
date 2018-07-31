@@ -1,0 +1,38 @@
+{
+    "menu": [
+        {
+            "menuId": "1",
+            "menuItemName": "Dashboard",
+            "path":""
+        },
+        {
+            "menuId": "2",
+            "menuItemName": "Supplier Management",
+            "path":"/supplier"
+        },
+        {
+            "menuId": "3",
+            "menuItemName": "Assessment Directory",
+            "path":"/assessment"
+        },
+        {
+            "menuId": "4",
+            "menuItemName": "Compare",
+            "path":"/compare"
+        },
+        {
+            "menuId": "5",
+            "menuItemName": "Best Match",
+            "path":""
+        },
+        {
+            "menuId": "6",
+            "menuItemName": "User Management",
+            "path":"/user"
+        },
+        {
+            "menuId": "7",
+            "menuItemName": "Role Management",
+            "path":"/role"
+        }]
+}

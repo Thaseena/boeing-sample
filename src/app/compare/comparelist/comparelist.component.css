@@ -1,0 +1,114 @@
+.boeing-data-icon {
+  position: relative;
+  left: 5px;
+  top: 1px;
+
+}
+.boeing-form-input-group .select-range{
+  font-size: 0.7em;
+  color: #5f6a72;
+  padding: 4px 2px;
+}
+
+.filter-sorting {
+  font-size: 0.85em;
+}
+.filter-sorting .filter-pointer {
+cursor: pointer;
+}
+.filter-sorting select {
+  font-size: 0.8em;
+  color: #5f6a72;
+  padding: 4px 2px;
+}
+
+.assessment-type {
+  color: #0096db;
+}
+.assessment-type a {
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+  color: #0096db;
+}
+.filter-layout {
+    padding: 1rem 0px;
+    box-shadow: 0px 2px 10px 0px #ccc;
+    margin-bottom: 12px;
+    display: flex;
+    padding-bottom: 0.3em;
+    color: #5f6a72;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.filter-layout p {
+    font-size: 0.8rem;
+    display: inline-flex;
+}
+.filter-layout i {
+    position: relative;
+    top:2px;
+    color: #5f6a72;
+}
+.filter-layout .filter-supplier {
+    display: block;
+}
+.filter-layout .select-supplier {
+    font-size: 0.75rem;
+    color: #5f6a72;
+    font-weight: 600;
+}
+.filter-assessment-type {
+    padding: 0;
+    font-size: 0.75rem;
+    border-radius: 0;
+    color: #5f6a72;
+    font-weight: 600;
+    display: block;
+}
+.filter-assessent-range {
+    display: block;
+}
+.asset-range{
+    padding: 0;
+    font-size: 0.75rem;
+    width: 20%;
+    border-radius: 0;
+    border: 0;
+    color: #5f6a72;
+    font-weight: 600;
+}
+.assessment-details {
+    position: absolute;
+    top: 80px;
+    width: 90%;
+    bottom: 10px;
+}
+.assessment-strength, .assessment-recommendation{
+    border: 1px solid #ccc;
+}
+.assessment-header {
+    padding: 5px;
+}
+.assessment-body {
+    padding:5px 15px;
+    border-top: 1px solid #ccc;
+}
+
+.filter-layout .select-year {
+    display: block;
+    font-size: 0.75rem;
+    color: #5f6a72;
+    font-weight: 600;
+}
+.filter-layout .select-page {
+    display: block;
+    font-size: 0.75rem;
+    color: #5f6a72;
+    font-weight: 600;
+}

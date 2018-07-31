@@ -1,0 +1,68 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
+.search-result-layout {
+    box-shadow: 3px 3px 10px 0px #ccc;
+    border-radius: 0;
+}
+.search-result-layout .card-header {
+    padding: .6rem 1rem;
+    background-color: transparent;
+}
+.search-result-layout .card-header h6 {
+    font-size: 15px;
+    color: #394a59;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.search-result-layout .card-header h6 span {
+    margin-left: 5px;
+    top: 3px;
+    position: relative;
+}
+.search-result-layout .card-body {
+    min-height: 365px;
+    padding: .6rem 1rem;
+    background-color: transparent;    
+}
+.search-result-layout .boeing-data-icon {
+    position: relative;
+    right: 10px;
+}
+.search-result-layout .boeing-search-result-icon img{
+    width: 20px;
+    height: 20px;
+}
+.search-result-layout .search-for {
+    font-size: 0.9em;
+}
+.assessment-details {
+    position: absolute;
+    top: 80px;
+    width: 90%;
+    bottom: 10px;
+}
+.assessment-strength, .assessment-recommendation{
+    border: 1px solid #ccc;
+}
+.assessment-header {
+    padding: 5px;    
+}
+.assessment-body {
+    padding:5px 15px;
+    border-top: 1px solid #ccc;
+}
+.assessment-header > a:before { 
+    float: right !important;
+    font-family: FontAwesome;
+    content:"\f068";
+    padding-right: 5px;
+}
+.assessment-header > a.collapsed:before {
+    float: right !important;
+    content:"\f067";
+}
+.assessment-header > a:hover, 
+.assessment-header > a:active, 
+.assessment-header > a:focus  {
+    text-decoration:none;
+}

@@ -1,0 +1,158 @@
+<div class="container-fluid pl-5 pr-5">
+    <div class="card boeing-card mb-3">
+      <div class="card-header">
+          <h6>                    
+            <img src='./assets/img/icon/add-new.png' alt="Add New Supplier Assessment" />
+            Add New Supplier Assessment
+          </h6>
+      </div>
+      <form class="boeing-form" name="form" (ngSubmit)="f.form.valid && addsupplierassessment(model)" #f="ngForm" novalidate>
+       <div class="card-body">        
+         <div class="boeing-section-grp">
+           <h6>Assessment Details</h6>
+           <div class="row">
+             <div class="col-md-10">
+                <div class="row justify-content-between">
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((assessmentName.touched || f.submitted) && assessmentName.errors)}">
+                            <label for="assessmentName">Assessment Name<span>*</span></label>
+                            <input type="text" class="form-control" id="assessmentName" #assessmentName="ngModel" name="assessmentName" [(ngModel)]="model.assessmentName" required /> 
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(assessmentName.touched || f.submitted) && assessmentName.errors && assessmentName.errors.required">
+                                Assessment Name is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((assessmentMode.touched || f.submitted) && assessmentMode.errors)}">
+                            <label for="assessmentMode">Assessment Mode<span>*</span></label>
+                            <select id="assessmentMode" class="form-control" #assessmentMode="ngModel" name="assessmentMode" [(ngModel)]="model.assessmentMode" required>                                                                      
+                                <option></option>
+                                <option>General</option>
+                                <option>SOW</option>                               
+                            </select>                                  
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(assessmentMode.touched || f.submitted) && assessmentMode.errors && assessmentMode.errors.required">
+                                Assessment Mode is required
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="assessmentDate">Assessment Date</label>   
+                            <input type="text"
+                            class="form-control boeing-datepicker"
+                            [minDate]="minDate"
+                            [maxDate]="maxDate"
+                            #dp="bsDatepicker"                            
+                            bsDatepicker [(bsValue)]="myDateValue" [bsConfig]="{ rangeInputFormat: 'DD-MM-YYYY', containerClass: 'theme-blue' }" />
+                        </div>
+                        <!-- <div class="error-msg-box">
+                            <div *ngIf="(assessmentDate.touched || f.submitted) && assessmentDate.errors && assessmentDate.errors.required">
+                                Assessment Date is required
+                            </div>
+                        </div>   -->
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((sow.touched || f.submitted) && sow.errors)}">
+                            <label for="sow">SOW<span>*</span></label>
+                            <input type="text" class="form-control" id="sow" #sow="ngModel" name="sow" [(ngModel)]="model.sow" required />
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(sow.touched || f.submitted) && sow.errors && sow.errors.required">
+                                SOW is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((supplierName.touched || f.submitted) && supplierName.errors)}">
+                            <label for="supplierName">Supplier Name<span>*</span></label>
+                            <input type="text" class="form-control" id="supplierName" #supplierName="ngModel" name="supplierName" [(ngModel)]="model.supplierName" required />
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(supplierName.touched || f.submitted) && supplierName.errors && supplierName.errors.required">
+                                Supplier Name is required
+                            </div>
+                        </div>                      
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((supplierAbbreviation.touched || f.submitted) && supplierAbbreviation.errors)}">
+                            <label for="supplierAbbreviation">Supplier Abbreviation<span>*</span></label>
+                            <input type="text" class="form-control" id="supplierAbbreviation" #supplierAbbreviation="ngModel" name="supplierAbbreviation" [(ngModel)]="model.supplierAbbreviation" required />
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(supplierAbbreviation.touched || f.submitted) && supplierAbbreviation.errors && supplierAbbreviation.errors.required">
+                                Supplier Abbreviation is required
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((locationCountry.touched || f.submitted) && locationCountry.errors)}">
+                            <label for="locationCountry">Location - Country<span>*</span></label>
+                            <input type="text" class="form-control" id="locationCountry" #locationCountry="ngModel" name="locationCountry" [(ngModel)]="model.locationCountry" required />
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(locationCountry.touched || f.submitted) && locationCountry.errors && locationCountry.errors.required">
+                                Country is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((locationState.touched || f.submitted) && locationState.errors)}">
+                            <label for="locationState">Location - State<span>*</span></label>
+                            <input type="text" class="form-control" id="locationState" #locationState="ngModel" name="locationState" [(ngModel)]="model.locationState" required />
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(locationState.touched || f.submitted) && locationState.errors && locationState.errors.required">
+                                State is required
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group" [ngClass]="{'has-input-error': ((locationCity.touched || f.submitted) && locationCity.errors)}">
+                            <label for="locationCity">Location - City<span>*</span></label>
+                            <input type="text" class="form-control" id="locationCity" #locationCity="ngModel" name="locationCity" [(ngModel)]="model.locationCity" required />
+                        </div>
+                        <div class="error-msg-box">
+                            <div *ngIf="(locationCity.touched || f.submitted) && locationCity.errors && locationCity.errors.required">
+                                City is required
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+             </div>
+           </div>
+         </div>  
+         <div class="boeing-section-grp">
+            <h6>Upload Document</h6>
+            <div class="row">
+               <div class="col-md-4 pr-1">
+                  <!-- <div class="input-group boeing-file-upload-input-grp">
+                      <input placeholder="" type="text" class="form-control upload-preview-filename" disabled="disabled">                    
+                      <span class="input-group-btn">                                              
+                         <div class="btn btn-primary"><span class="title"><i class="fa fa-upload"></i>Upload</span>
+                             <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview" />                        
+                         </div>                      
+                      </span> 
+                  </div> -->
+               </div>
+            </div>
+         </div>         
+       </div>
+       <div class="card-footer">
+          <div class="mx-auto w-50 text-center">
+              <button class="btn btn-primary btn-sm">Add</button>
+              <button class="btn btn-sm btn-default" (click)="addSupplierAssessmentCancel()">Cancel</button>
+          </div>       
+       </div>
+    </form> 
+  </div>
+  </div>
+  
+  

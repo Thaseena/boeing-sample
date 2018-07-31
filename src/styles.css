@@ -1,0 +1,1147 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '~node_modules/font-awesome/css/font-awesome.css';
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+/* common color for boeing */
+.boeing-light-grey-color {
+    color: #5f6a72;
+}
+* {
+box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+body{
+    background: #F2F2F2;
+    font-family: arial,sans-serif;    
+}
+.breadcrumb {
+    background: none;
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    content: '>';
+}
+.boeing-grey-color {
+    color: #394a59;
+}
+.breadcrumb-item > a {
+    color: #394a59;
+}
+.breadcrumb-item.active {
+    color: #0096db;
+}
+
+.search-result-container ~ .common-footer > .footer {
+    position: relative !important;
+}
+.datatable-checkbox input[type='checkbox']:checked:before {
+    border-color: #0096db;
+}
+/* .ngx-datatable .datatable-body .score {
+  background-color: red !important;
+} */
+.ngx-datatable.material {
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.ngx-datatable .datatable-body .datatable-body-row > div {
+  background: #eeeeee;
+}
+	
+.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover, .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {		
+  background: #eeeeee !important;		
+}
+.boeing-footer {
+  width: 100%;
+  text-align: center; 
+  bottom: 0;
+  position: relative; 
+}
+.custom-breadcrumb .breadcrumb {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-size: 0.9em;
+  color: #394a59;
+}
+.custom-breadcrumb .breadcrumb-item.active {
+  color: #005DAB;
+}
+.boeing-card {  
+  border-radius: 0;
+  -webkit-box-shadow: -1px 0px 8px 0px #ccc;
+  -moz-box-shadow: -1px 0px 8px 0px #ccc;
+  -ms-box-shadow: -1px 0px 8px 0px #ccc;
+  -o-box-shadow: -1px 0px 8px 0px #ccc;
+  box-shadow: -1px 0px 8px 0px #ccc;
+}
+.boeing-card .card-header {
+  padding: .6rem 1rem;
+  background-color: transparent;
+}
+.boeing-card .card-body {
+  min-height: 365px;
+  padding: .6rem 1rem;  
+  background-color: transparent;
+}
+.boeing-card .card-header h6 {
+  font-size: 15px;
+  color: #394a59;
+  font-weight: 600;    
+  margin-bottom: 0;
+}
+.boeing-card .card-header h6 span { 
+  margin-left: 5px;
+  top: 3px;
+  position: relative;
+}
+.boeing-card .card-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #F2F2F2;
+  border-top: none;
+}
+.boeing-form .form-group > label {
+  font-size: 13px;    
+  color: #394a59;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+.boeing-form .form-group > label span {
+  color: #C60035;
+  margin-left: 2px;
+  top:-2px;
+  position: relative;
+} 
+.boeing-form .form-group .form-control {
+  border-radius: .1rem;    
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.boeing-card .card-footer .btn {
+  width: 100px;
+  padding-top: .15rem;
+  padding-bottom: .15rem;
+  font-size: .8rem;
+  font-weight: 600;
+  border-radius: .1rem;    
+}
+.boeing-card .card-footer .btn-default {
+  color: #676566;
+  background-color: #B6BBBF;
+}
+.boeing-card .card-footer .btn-primary { 
+  background-color: #005DAB;
+}
+.boeing-card .card-footer .btn + .btn {
+  margin-left: 20px;    
+}
+.highcharts-title tspan, .highcharts-credits
+{
+    display:none;
+}
+.highcharts-contextbutton title {
+    display: none !important;
+}
+.highcharts-contextmenu {
+    padding-top: 16px !important;
+    padding-right: 40px !important;
+}
+.highcharts-menu {
+    width: 105px;
+    padding: 5px 0px 10px 0 !important;
+    border-color: #ccc !important;
+    box-shadow: #ccc 1px 1px 5px !important;
+    -webkit-box-shadow: #ccc 1px 1px 5px !important;
+    -moz-box-shadow: #ccc 1px 1px 5px !important;
+    -o-box-shadow: #ccc 1px 1px 5px !important;
+    -ms-box-shadow: #ccc 1px 1px 5px !important;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+}
+.highcharts-menu-item {
+    padding: 0.8em 1.3em !important;
+    color: #555 !important; 
+}
+.highcharts-menu-item:hover {
+    background-color: #DAE8F3 !important;           
+}
+.highcharts-button-box {
+    width: 0 !important;
+    height: 0 !important;    
+}
+.error-msg-box {
+    color:red;
+    font-size: 0.75em;
+}
+.boeing-table-custom .is-deactivate button, .boeing-table-custom .is-activate button { 
+   padding: 2px 0px;
+   color: #fff;
+   text-align: center;
+   font-size: 13px;   
+   width: 100%;
+   border-radius: 50px;
+   -webkit-border-radius: 50px;   
+   -moz-border-radius: 50px;
+   -ms-border-radius: 50px;
+   -o-border-radius: 50px;
+}
+.boeing-table-custom:not(.cell-selection) .datatable-body-row:hover, .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+  background-color: #fff;
+}
+.boeing-table-custom .is-deactivate button {
+  background-color: #F35D4E;  
+}
+.boeing-table-custom .is-activate button {
+  background-color: #73BA3A;
+}
+.boeing-table-custom .edit-user {
+  text-align: center;
+}
+.boeing-table-custom.users .datatable-header-cell:first-child, .boeing-table-custom.users .datatable-body-cell:first-child,
+.boeing-table-custom.roles .datatable-header-cell:first-child, .boeing-table-custom.roles .datatable-body-cell:first-child,
+.boeing-table-custom-cell-align .datatable-body-cell:first-child,
+.boeing-table-custom.assessments .datatable-header-cell:first-child, .boeing-table-custom.assessments .datatable-body-cell:first-child {
+  width: 4% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:last-child, .boeing-table-custom.users .datatable-body-cell:last-child,
+.boeing-table-custom.roles .datatable-header-cell:last-child, .boeing-table-custom.roles .datatable-body-cell:last-child,
+.boeing-table-custom-cell-align .datatable-body-cell:last-child {
+  width: 5% !important;
+}
+.boeing-table-custom.roles .datatable-header-cell:nth-child(2), .boeing-table-custom.roles .datatable-header-cell:nth-child(3), .boeing-table-custom.roles .datatable-header-cell:nth-child(4), .boeing-table-custom.roles .datatable-header-cell:nth-child(5),
+.boeing-table-custom.roles .datatable-body-cell:nth-child(2), .boeing-table-custom.roles .datatable-body-cell:nth-child(3), .boeing-table-custom.roles .datatable-body-cell:nth-child(4), .boeing-table-custom.roles .datatable-body-cell:nth-child(5) {
+  width: 22.75% !important;
+}
+.boeing-table-custom-cell-align .datatable-body-cell:nth-child(2) {
+  width: 25% !important;
+}
+.boeing-table-custom-cell-align .datatable-body-cell:nth-child(3) {
+  width: 25% !important;
+}
+.boeing-table-custom-cell-align .datatable-body-cell:nth-child(4) {
+  width: 25% !important;
+}
+.boeing-table-custom-cell-align .datatable-body-cell:nth-child(5) {
+  width: 16% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(2), .boeing-table-custom.users .datatable-body-cell:nth-child(2) {
+  width: 15% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(3), .boeing-table-custom.users .datatable-body-cell:nth-child(3) {
+  width: 15% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(4), .boeing-table-custom.users .datatable-body-cell:nth-child(4) {
+  width: 9% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(5), .boeing-table-custom.users .datatable-body-cell:nth-child(5) {
+  width: 18% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(6), .boeing-table-custom.users .datatable-body-cell:nth-child(6) {
+  width: 14% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(7), .boeing-table-custom.users .datatable-body-cell:nth-child(7) {
+  width: 12% !important;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(8), .boeing-table-custom.users .datatable-body-cell:nth-child(8) {
+  width: 10% !important;
+}
+.boeing-table-custom .datatable-header {  
+  background-color: #F1F1F1;  
+}
+.boeing-table-custom .datatable-header-cell-label {
+  font-size: 13px;
+  color: #394a59;
+  font-weight: 600;  
+}
+.boeing-table-custom .datatable-row-wrapper {
+  margin-bottom: 0px !important;
+}
+.boeing-table-custom .datatable-header-cell, .boeing-table-custom .datatable-body-cell {
+  padding-top: .69rem !important;
+  padding-bottom: .69rem !important;
+  line-height: 1.4 !important;  
+}
+.boeing-table-custom .datatable-header { 
+  border-bottom-width: 0px !important;
+}
+.boeing-table-custom .datatable-body-row .datatable-body-cell {
+  border-top: 1px solid rgba(0,0,0,.125) !important;
+}
+.boeing-table-custom .datatable-body-cell-label {  
+  font-size: 13px;
+  color: #394a59;
+}
+.boeing-table-custom .datatable-body .datatable-body-row > div {
+  background-color: #fff;
+}
+.boeing-table-custom.users .datatable-header-cell:nth-child(4) {
+  background-position: 52px;
+}
+.boeing-table-custom .first-name a {
+  text-decoration: underline;
+  color: #005DAB;
+}
+.boeing-table-custom .fa-calendar, .boeing-search-custom i, .boeing-ans-data i {
+  margin-right: 5px;
+}
+.boeing-search-custom .datatable-checkbox input[type='checkbox']:before, .boeing-table-custom .datatable-checkbox input[type='checkbox']:before {
+  border-width: 1px;
+  border-color: #ced4da;
+}
+.boeing-table-custom .datatable-checkbox input[type='checkbox']:checked:before {
+  border-color: #0096db !important;
+} 
+.boeing-table-custom .datatable-footer {
+  background-color: #F2F2F2;
+  border-top: none !important;
+  color: #394a59 !important;
+}
+.boeing-table-custom .datatable-footer .page-limit {
+  border: none;
+  background: #fff url(/assets/img/icon/sort-down.png) no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  width: 40px;
+  height: 19px;
+  line-height: 20px;
+  padding-left: 5px;
+  background-position: right 5px center;
+}
+.boeing-table-custom .datatable-footer .page-count {
+  line-height: 40px !important;
+  height: 40px !important;
+}
+.boeing-table-custom .datatable-footer .page-limit {
+  color: #394a59 !important;
+}
+.boeing-table-custom .datatable-footer .datatable-pager {
+  margin: 0 !important;
+}
+.boeing-table-custom .datatable-pager .pager li {
+  position: relative; 
+}
+.boeing-table-custom .datatable-pager .pager li a:hover {
+  background-color: transparent !important;
+}
+.boeing-table-custom .datatable-pager .pager li a {
+  min-width: 0 !important;
+  margin: 0 !important;
+  color: #005DAB !important;
+}
+.boeing-table-custom .datatable-pager .pager li:first-child, .boeing-table-custom .datatable-pager .pager li:last-child {
+  display: none !important;
+}
+.boeing-table-custom .datatable-pager .pager li:nth-child(2) {
+  padding-right: 30px !important;
+  margin-right: 8px !important; 
+} 
+.boeing-table-custom .datatable-pager .pager li:nth-last-child(2) {
+  padding-left: 32px !important;  
+}
+.boeing-table-custom .datatable-pager .pager li:nth-child(2):before, .boeing-table-custom .datatable-pager .pager li:nth-last-child(2):before {
+  position: absolute;
+  top: 1px;  
+  color: #005DAB;
+}
+.boeing-table-custom .datatable-pager .pager li:nth-child(2):before {
+  content: 'Prev'; 
+  right: 8px;  
+}
+.boeing-table-custom .datatable-pager .pager li:nth-last-child(2):before {
+  content: 'Next';  
+  left: 17px;  
+}
+.boeing-table-custom .datatable-pager .pager li:nth-child(2):after, .boeing-table-custom .datatable-pager .pager li:nth-last-child(2):after {
+  content: '';
+  width: 0;
+  height: 13px;
+  border: 0.5px solid #666;
+  position: absolute;
+  top: 4px;
+}
+.boeing-table-custom .datatable-pager .pager li:nth-child(2):after {  
+  right: -5px;  
+}
+.boeing-table-custom .datatable-pager .pager li:nth-last-child(2):after { 
+  left: 5px;
+}
+.boeing-table-custom .datatable-pager .pager li:nth-child(2) a { 
+  padding: 0;
+  margin: 0;
+}
+.boeing-table-custom .datatable-pager i {
+  font-size: 27px !important;
+  padding: 0 !important;
+  position: relative;
+  top: -3px;
+}
+.boeing-table-custom .datatable-pager li.active a {
+  background-color: transparent !important;
+  font-size: 15px;  
+}
+.boeing-form .form-group {
+  margin-bottom: 2rem;
+}
+.boeing-form .form-group.has-input-error {
+  margin-bottom: 0;
+}
+.boeing-form .error-msg-box {
+  margin-bottom: 1rem;
+}
+.boeing-form select {  
+  background: url(/assets/img/icon/sort-down-lg.png) no-repeat;
+  background-position: right 10px center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  line-height: 1.1 !important;
+}
+.boeing-form select.form-control:not([size]):not([multiple]) {
+  height: calc(1.6rem + 2px);
+}
+.boeing-form-input-group {
+  margin: 10px 0 25px;  
+}
+.boeing-form-input-group .form-control, .boeing-form-input-group .input-group-text {
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  line-height: 0.5;   
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.boeing-form-input-group .form-control:focus {
+  outline: 0 !important;
+  border-color: initial;
+  box-shadow: none;
+}
+.boeing-form-input-group .input-group-text i {
+  color: #666666;
+  font-weight: 500;
+}
+.mar-top-neg-5px {
+  margin-top: -5px;
+}
+.boeing-card .card-body.min-ht-367px {
+  min-height: 370px;
+}
+.boeing-form .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #394a59;
+  opacity: 1; /* Firefox */
+}
+.boeing-form .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #394a59;
+}
+.boeing-form .form-control::-ms-input-placeholder { /* Microsoft Edge */
+  color: #394a59;
+}
+.dropdown-menu {
+  min-width: 4.2rem;
+  font-size: 0.8em;
+  padding-top: .2rem;
+  border-radius: .2rem;
+  -webkit-border-radius: .2rem;
+  -moz-border-radius: .2rem;
+  -ms-border-radius: .2rem;
+  -o-border-radius: .2rem;
+  transform: translate(73px,-10px) !important;
+  margin-top: 0;
+}
+.dropdown-item {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: #394a59;
+}
+.dropdown-item:hover {
+  background-color: #DAE8F3;  
+}
+.dropdown-item.active, .dropdown-item:active, .dropdown-item:focus {
+  color: #fff;
+  background-color: #0062cc;
+}
+.datatable-checkbox input[type='checkbox']:checked:before {
+  width: 0.8rem;
+  top: 1px;
+  height: .4rem;
+}
+.boeing-btn {
+  color: #fff;
+  background-color: #0096db;
+  border-color: #0096db;
+  padding: 2px 16px;
+  border-radius: 0;
+  font-size: 0.8em;
+}
+.boeing-btn img, .boeing-btn i {    
+  position: relative;
+  left: -4px;
+  margin-left: -5px;    
+  right: 5px;
+  margin-right: 3px;
+}
+.boeing-btn img {
+  width: 12px;
+  height: 12px;
+  top: -2px;
+}
+.boeing-btn i {
+  font-size: 15px;  
+}
+.boeing-btn img.boeing-w-14-px {
+  width: 14px;
+}
+.bootstrap-select.form-control {
+  border-radius: 0;
+}
+.bootstrap-select > .dropdown-toggle {
+  padding: 0px 8px 0px 8px !important;
+  border-radius: 0 !important;
+  background: #e2e1dd !important;
+  border: none !important;
+  font-size: 0.8em !important;
+  height: 30px !important;
+  color: #5f6a72 !important;
+}
+.bootstrap-select > .dropdown-toggle:after {
+  top: 1px;
+  position: relative;
+}
+.bootstrap-select .dropdown-menu.inner {
+  position: relative;
+}
+.bootstrap-select .dropdown-menu {
+  padding: 0;
+  font-size: 0.85em;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-transform: translate(0,0) !important; 
+  transform: translate(0,0) !important; 
+}
+.bootstrap-select .dropdown-item {
+  padding-left: 0.69rem;
+  padding-right: 0.69rem;
+}
+.boeing-form .form-check-inline {
+  margin-right: 1.8rem;
+}
+.boeing-form .form-check-label {  
+  font-size: 13px;
+  color: #394a59;
+  margin-top: 4px;
+}
+.boeing-form .form-check-input {
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  margin-right: 0.7rem;  
+}
+.boeing-form .form-check-input:before {  
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  border: 1px solid #ced4da;
+}
+.boeing-form .form-check-input:after {  
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+}
+.boeing-form .form-check-input:checked:before {
+  width: 0.6rem;
+  top: 4px;
+  height: .3rem;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);  
+  border-color: #0096db;
+  border-top-style: none;
+  border-right-style: none;
+  left: 3px;
+}
+/*
+* Search results Footer Starts
+*/ 
+.boeing-search-custom .datatable-body .datatable-row-wrapper + .datatable-row-wrapper {
+  margin-top: 8px;
+}
+.boeing-search-custom .datatable-body .datatable-row-wrapper {
+  -webkit-box-shadow: 0px 2px 6px -3px #999;
+  -moz-box-shadow: 0px 2px 6px -3px #999;
+  -ms-box-shadow: 0px 2px 6px -3px #999;
+  -o-box-shadow: 0px 2px 6px -3px #999;
+  box-shadow: 0px 2px 6px -3px #999;
+}
+.boeing-search-custom .datatable-body-row .datatable-body-cell {
+  color: #5f6a72 !important;
+}
+
+.boeing-search-custom .datatable-body-row {		
+  /* min-height: 248px;		 */
+}		
+
+.boeing-search-custom .datatable-footer {
+  background-color: #F2F2F2;
+  border-top: none !important;
+  color: #394a59 !important;
+}
+.boeing-search-custom .datatable-footer .page-limit {
+  border: none;
+  background: #fff url(/assets/img/icon/sort-down.png) no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  width: 40px;
+  height: 19px;
+  line-height: 20px;
+  padding-left: 5px;
+  background-position: right 5px center;
+}
+.boeing-search-custom .datatable-footer .page-count {
+  line-height: 40px !important;
+  height: 40px !important;
+}
+.boeing-search-custom .datatable-footer .page-limit {
+  color: #394a59 !important;
+}
+.boeing-search-custom .datatable-footer .datatable-pager {
+  margin: 0 !important;
+}
+.boeing-search-custom .datatable-pager .pager li {
+  position: relative; 
+}
+.boeing-search-custom .datatable-pager .pager li a:hover {
+  background-color: transparent !important;
+}
+.boeing-search-custom .datatable-pager .pager li a {
+  min-width: 0 !important;
+  margin: 0 !important;
+  color: #005DAB !important;
+}
+.boeing-search-custom .datatable-pager .pager li:first-child, .boeing-search-custom .datatable-pager .pager li:last-child {
+  display: none !important;
+}
+.boeing-search-custom .datatable-pager .pager li:nth-child(2) {
+  padding-right: 30px !important;
+  margin-right: 8px !important; 
+} 
+.boeing-search-custom .datatable-pager .pager li:nth-last-child(2) {
+  padding-left: 32px !important;  
+}
+.boeing-search-custom .datatable-pager .pager li:nth-child(2):before, .boeing-search-custom .datatable-pager .pager li:nth-last-child(2):before {
+  position: absolute;
+  top: 1px;  
+  color: #005DAB;
+}
+.boeing-search-custom .datatable-pager .pager li:nth-child(2):before {
+  content: 'Prev'; 
+  right: 8px;  
+}
+.boeing-search-custom .datatable-pager .pager li:nth-last-child(2):before {
+  content: 'Next';  
+  left: 17px;  
+}
+.boeing-search-custom .datatable-pager .pager li:nth-child(2):after, .boeing-search-custom .datatable-pager .pager li:nth-last-child(2):after {
+  content: '';
+  width: 0;
+  height: 13px;
+  border: 0.5px solid #666;
+  position: absolute;
+  top: 4px;
+}
+.boeing-search-custom .datatable-pager .pager li:nth-child(2):after {  
+  right: -5px;  
+}
+.boeing-search-custom .datatable-pager .pager li:nth-last-child(2):after { 
+  left: 5px;
+}
+.boeing-search-custom .datatable-pager .pager li:nth-child(2) a { 
+  padding: 0;
+  margin: 0;
+}
+.boeing-search-custom .datatable-pager i {
+  font-size: 27px !important;
+  padding: 0 !important;
+  position: relative;
+  top: -3px;
+}
+.boeing-search-custom .datatable-pager li.active a {
+  background-color: transparent !important;
+  font-size: 15px;  
+}
+.boeing-search-custom .datatable-footer .page-count, .boeing-table-custom .datatable-footer .page-count {
+  padding-left: 1.8rem !important;
+  padding-right: 1.8rem !important;
+}
+/*
+* Search results Footer Ends
+*/ 
+.select-number-of-records {
+  display: inline-block;
+}
+.select-number-of-records label{
+  font-size: 0.8em;
+}
+.select-number-of-records select {
+  font-size: 0.7em;
+  color: #5f6a72;
+  padding: 2px 2px;
+  border-color: #dee2e6;
+}
+
+/*Scroll bar for Datatable Start*/
+.boeing-search-custom .datatable-footer {
+  display: block;
+  width: 100%;  
+}
+.boeing-search-custom .datatable-body, .boeing-table-custom .datatable-body {
+  height: 483px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  margin-bottom: 8px;
+}
+/* width */
+.boeing-search-custom .datatable-body::-webkit-scrollbar, .boeing-table-custom .datatable-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.boeing-search-custom .datatable-body::-webkit-scrollbar-track, .boeing-table-custom .datatable-body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 35px #ccc;
+  border-radius: 5px;
+}
+
+/* Handle */
+.boeing-search-custom .datatable-body::-webkit-scrollbar-thumb, .boeing-table-custom .datatable-body::-webkit-scrollbar-thumb {
+  background: #0096db;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.boeing-search-custom .datatable-body::-webkit-scrollbar-thumb:hover, .boeing-table-custom .datatable-body::-webkit-scrollbar-thumb:hover {
+  background: #034d6f;
+}
+/*Scroll bar for Datatable End*/
+
+.card-body.min-ht-419px {
+  min-height: 419px;
+}
+
+/* Start card body content styles changes */
+.card-body.min-ht-419px {
+  min-height: 419px;
+}
+/* End card body content styles changes */
+
+/* Moved filter custom style changes here */
+.filter-sorting {
+  font-size: 0.8em;
+}
+.filter-sorting .filter-pointer {
+cursor: pointer;
+}
+.filter-sorting select {
+  font-size: 0.85em;
+  color: #5f6a72;
+  padding: 4px 2px;
+  border-color: #dee2e6;
+}
+/* Moved font custom style changes here */
+.boeing-link-title {
+  text-align: left;
+  color: #005DAB;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;  
+  text-decoration: underline;  
+}
+.boeing-qs-data, .boeing-ans-data {
+  font-size: 12px;
+  color: #5f6a72;
+  text-align: left;    
+}
+.boeing-qs-lg-data {
+  font-size: 12px;
+  color: #5f6a72;
+  text-align: left;
+  font-weight: bold;
+  display: block;
+}
+.boeing-qs-lg-data.unbold {
+  font-weight: 500;
+}
+.boeing-ans-data.bold {
+  font-weight: bold;
+}
+.boeing-ans-data a {
+  display: block;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;  
+  position: relative;
+}
+.boeing-ans-data a + div.more-info {
+  display: none;
+}
+.boeing-ans-data a:hover + div.more-info {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  position: absolute;
+  cursor: pointer;
+  background-color: #fff;
+  z-index: 1000;
+  -webkit-box-shadow: -1px 0px 8px 0px #ccc;
+  -moz-box-shadow: -1px 0px 8px 0px #ccc;
+  -ms-box-shadow: -1px 0px 8px 0px #ccc;
+  -o-box-shadow: -1px 0px 8px 0px #ccc;
+  box-shadow: -1px 0px 8px 0px #ccc;
+}
+/* Data grid common styles goes here */
+.boeing-search-custom.min-ht-320px .datatable-body-row {		
+  min-height: 248px;		
+}		
+.boeing-search-custom .datatable-body-cell {
+  line-height: 1.5;
+}
+.boeing-table-custom-cell-align .datatable-body {
+  margin-bottom: 2px;
+}
+.boeing-search-custom .datatable-body {
+  height: 435px !important;  
+}
+.boeing-table-custom .datatable-body {
+  height: 240px !important;
+  margin-bottom: 0;
+}
+.boeing-table-custom .datatable-row-wrapper:last-child .datatable-body-cell {
+  padding-bottom: 0 !important;
+}
+.boeing-table-custom-cell-align .datatable-body-cell {
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+.boeing-table-custom-cell-align .datatable-body-row {
+  min-height: auto;
+}
+.boeing-w-auto {
+  width: auto !important;
+}
+.boeing-grey-bor-bottom {
+  border-bottom: 1px solid #ddd;
+}
+.boeing-dark-grey--font {
+  color: #394a59 !important;
+}
+.boeing-filter-container {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+.boeing-search-custom .datatable-checkbox input[type='checkbox']:checked:before {
+  border-color: #0096db;
+  top: 3px;  
+  left: 1px;
+}
+.boeing-min-ht-267px {
+  min-height: 267px !important;
+}
+.boeing-filter-custom-grp .boeing-search-filter, .boeing-filter-custom-grp .boeing-form-input-group, .boeing-filter-custom-grp .select-number-of-records {
+  float: left;
+}
+.boeing-search-filter select {
+  font-size: 0.7em;
+  color: #5f6a72;
+  padding: 3px 2px;
+  border-color: #dee2e6;
+}
+.boeing-filter-custom-grp .boeing-form-input-group {
+  width: auto;
+  margin: 0;  
+}
+.boeing-filter-custom-grp .boeing-form-input-group .form-control, .boeing-filter-custom-grp .boeing-form-input-group .input-group-text {
+  font-size: 0.7rem;
+}
+.boeing-filter-custom-grp .boeing-form-input-group .form-control, .boeing-filter-custom-grp .input-group-append {
+  margin-top: 2px;
+}
+.boeing-section-grp + .boeing-section-grp {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+.boeing-section-grp h6 {
+  font-size: 13px;
+  color: #394a59;
+  font-weight: bold;
+  line-height: 15px;
+  border-bottom: 1px solid #394a59;
+  display: inline-block;
+  margin-bottom: 0.9rem;
+}
+.boeing-file-upload-input-grp .upload-preview-filename {
+  height: 30px;  
+  border-radius: .1rem !important;
+  -webkit-border-radius: .1rem !important;
+  -moz-border-radius: .1rem !important;
+  -o-border-radius: .1rem !important;
+  -ms-border-radius: .1rem !important;
+}
+.boeing-file-upload-input-grp .btn {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;    
+    background-color: #0096db;
+    border-color: #0096db;        
+    border-radius: 0;      
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;      
+    -o-border-radius: 0;      
+    -ms-border-radius: 0;       
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    font-size: 0.8rem;
+    line-height: 1.5;   
+    left: 20px;
+}
+.boeing-file-upload-input-grp input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.boeing-file-upload-input-grp .title {
+  margin-left:2px;
+}
+.boeing-file-upload-input-grp .title i {
+  margin-right: 5px;
+}
+.bs-datepicker-head {  
+  text-align: -webkit-center;
+}
+.boeing-datepicker {
+  background: url(/assets/img/icon/calendar.png) no-repeat center right 6px;
+}
+.filter-layout {
+  padding: 1rem 0px;
+  box-shadow: 0px 2px 10px 0px #ccc;
+  margin-bottom: 12px;
+  display: flex;
+  padding-bottom: 0.3em;
+  color: #5f6a72;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+.filter-layout p {
+  font-size: 0.8rem;
+  display: inline-flex;
+}
+.filter-layout i {
+  position: relative;
+  top:2px;
+  color: #5f6a72;
+}
+.filter-layout .filter-supplier {
+  display: block;
+}
+.filter-layout .select-supplier {
+  font-size: 0.75rem;
+  color: #5f6a72;
+  font-weight: 600;
+}
+.filter-assessment-type {
+  padding: 0;
+  font-size: 0.75rem;
+  border-radius: 0;
+  color: #5f6a72;
+  font-weight: 600;
+  display: block;
+}
+.filter-assessent-range {
+  display: block;
+}
+.asset-range{
+  padding: 0;
+  font-size: 0.75rem;
+  width: 20%;
+  border-radius: 0;
+  border: 0;
+  color: #5f6a72;
+  font-weight: 600;
+}
+.filter-sorting {
+  font-size: 0.85em;
+}
+.filter-sorting .filter-pointer {
+cursor: pointer;
+}
+.filter-sorting select {
+  font-size: 0.8em;
+  color: #5f6a72;
+  padding: 4px 2px;
+}
+.assessment-type {
+color: #0096db;
+}
+.assessment-type a {
+text-decoration: underline;
+cursor: pointer;
+font-weight: bold;
+color: #0096db;
+}
+.filter-layout .select-year {
+  display: block;
+  font-size: 0.75rem;
+  color: #5f6a72;
+  font-weight: 600;
+}
+.filter-layout .select-page {
+  display: block;
+  font-size: 0.75rem;
+  color: #5f6a72;
+  font-weight: 600;
+}
+.boeing-table-custom.assessments .datatable-header-cell:nth-child(2), .boeing-table-custom.assessments .datatable-header-cell:nth-child(3), .boeing-table-custom.assessments .datatable-header-cell:nth-child(4), .boeing-table-custom.assessments .datatable-header-cell:nth-child(5),
+.boeing-table-custom.assessments .datatable-body-cell:nth-child(2), .boeing-table-custom.assessments .datatable-body-cell:nth-child(3), .boeing-table-custom.assessments .datatable-body-cell:nth-child(4), .boeing-table-custom.assessments .datatable-body-cell:nth-child(5) {
+  width: 24% !important;
+}
+.boeing-table-custom.assessments .datatable-body {
+  height: 206px !important;
+}
+.boeing-card .card-body.no-padding {
+  padding: 0;
+}
+.boeing-card .card-body.no-padding .boeing-section-grp {
+  padding: .6rem 1rem;
+}
+.boeing-search-custom .edit-cell {
+  top: 29px;
+  position: absolute;
+}
+.edit-cell i {
+  font-size: 16px;
+  vertical-align: middle;
+  line-height: 24px;
+}
+.boeing-doc-list-header {
+  padding: .6rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.boeing-doc-list-header h6 {
+  font-size: 15px;
+  color: #394a59;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.boeing-doc-list-header h6 span {
+  margin-left: 5px;
+  top: 3px;
+  position: relative;
+}
+.boeing-doc-list-body {
+  padding: 1rem 1.5rem;
+}
+.boeing-search-custom .datatable-header-cell .datatable-checkbox {
+  margin-left: 40px;
+}
+.boeing-search-custom .datatable-header-cell .datatable-checkbox:before {
+  content: 'Select All'; 
+  position: absolute;
+  left: -56px;
+}
+.boeing-search-custom .datatable-body-cell:first-child {
+  width: 30px !important;
+}
+
+.boeing-table-custom.users .datatable-header-cell:nth-child(8) .sort-btn:not([class*="datatable-icon-"]):before, 
+.boeing-table-custom.users .datatable-header-cell:nth-child(9) .sort-btn:not([class*="datatable-icon-"]):before {
+  content: '';
+}
+.boeing-table-custom.users .sort-btn:not([class*="datatable-icon-"]):before { 
+  font-family: data-table; 
+  content: "c"; 
+  font-size: 15px;  
+  top: 2px;  
+  position: relative;
+}
+.boeing-table-custom.roles .datatable-header-cell:nth-child(6) .sort-btn:not([class*="datatable-icon-"]):before, 
+.boeing-table-custom.roles .datatable-header-cell:nth-child(7) .sort-btn:not([class*="datatable-icon-"]):before {
+  content: '';
+}
+.boeing-table-custom.roles .sort-btn:not([class*="datatable-icon-"]):before {
+  font-family: data-table; 
+  content: "c"; 
+  font-size: 15px;  
+  top: 2px;  
+  position: relative;
+}
+.boeing-comparelist .datatable-body {
+  height: 388px !important;
+}
+.comparison-row {
+  border-top: 2px solid #ccc;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.alert-warning {
+  border: 1px solid #fff;
+  border-radius: 0;
+}
+.compare-dismiss {
+  padding-left: 0px;
+  padding-right: 0px;
+  background: #f1f1f1;
+  border: 1px solid #fff;
+}
+.compare-dismiss .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .75rem 1.25rem;
+  color: inherit;
+}

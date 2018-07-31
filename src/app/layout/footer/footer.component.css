@@ -1,0 +1,9 @@
+#footer {
+    padding: 12px 12px;
+    background: #A9A9A9;
+    color: #111;
+ }
+.footer .footer-title {    
+    margin-bottom: 0;   
+    font-size: 0.75em;
+}
